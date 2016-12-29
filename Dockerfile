@@ -11,8 +11,7 @@ RUN apt-get update && apt-get install -y wget && \
 RUN wget -q http://download.bareos.org/bareos/release/latest/Debian_8.0/Release.key -O- | apt-key add - && \
     echo "deb http://download.bareos.org/bareos/release/latest/Debian_8.0/ /" > /etc/apt/sources.list.d/bareos.list && \
     apt-get update -qq && \
-    apt-get install -qq -y bareos-webui && \
-    apt-clean
+    apt-get install -qq -y bareos-webui
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod u+x /docker-entrypoint.sh
