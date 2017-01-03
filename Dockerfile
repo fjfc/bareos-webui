@@ -19,7 +19,7 @@ RUN tar cfvz /bareos-webui.tgz /etc/bareos-webui
 
 EXPOSE 80
 
-VOLUME /root/bareos-vol:/etc/bareos-webui
+VOLUME /root/bareos-vol/bareos-webui:/etc/bareos-webui
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
